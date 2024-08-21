@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Profile from './views/Profile';
 import Dashboard from './views/Dashboard';
-import MiniDrawer from './views/Sidebar';
+import MiniDrawer from './components/Sidebar';
 import Box from '@mui/material/Box';
 import DC from './views/DC';
 import VM from './views/VM';
@@ -15,7 +15,7 @@ function App() {
         <MiniDrawer />
         <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop:'65px'}}>
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/profile" element={<Profile />} /> 
             <Route path="/dc" element={<DC/>} />
             <Route path="/vm" element={<VM/>} /> 

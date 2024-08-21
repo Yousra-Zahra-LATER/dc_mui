@@ -278,7 +278,7 @@ export default function MiniDrawer() {
         <List>
           <ListItem disablePadding>
             <ListItemButton
-             onClick={() => navigate('/dashboard')}
+             onClick={() => navigate('/')}
               sx={{
                 minHeight: 48,
                 justifyContent: open ? "initial" : "center",
