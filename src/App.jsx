@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Profile from './components/Profile';
-import Dashboard from './components/Dashboard';
-import MiniDrawer from './components/Sidebar';
+import Profile from './views/Profile';
+import Dashboard from './views/Dashboard';
+import MiniDrawer from './views/Sidebar';
 import Box from '@mui/material/Box';
-import DC from './components/DC';
-import VM from './components/VM';
+import DC from './views/DC';
+import VM from './views/VM';
 // Importez d'autres composants si nécessaire
 
 function App() {
