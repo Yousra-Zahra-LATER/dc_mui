@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -16,10 +17,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
@@ -151,6 +149,7 @@ export default function MiniDrawer() {
   const handleIpamClick = () => {
     setIpamOpen(!ipamOpen);
   };
+  
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -280,7 +279,7 @@ export default function MiniDrawer() {
         <List>
           <ListItem disablePadding>
             <ListItemButton
-              to="/dashboard"
+             onClick={() => navigate('/dashboard')}
               sx={{
                 minHeight: 48,
                 justifyContent: open ? "initial" : "center",
@@ -305,7 +304,7 @@ export default function MiniDrawer() {
 
           <ListItem disablePadding>
             <ListItemButton
-              to="/dc"
+              onClick={() => navigate('/dc')}
               sx={{
                 minHeight: 48,
                 justifyContent: open ? "initial" : "center",
@@ -353,19 +352,19 @@ export default function MiniDrawer() {
           </ListItem>
           <Collapse in={openD} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 4 }}>
+              <ListItemButton sx={{ pl: 4 }} onClick={() => navigate('/server')}>
                 <ListItemIcon>
                   <StorageIcon />
                 </ListItemIcon>
                 <ListItemText primary="Server" />
               </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
+              <ListItemButton sx={{ pl: 4 }} onClick={() => navigate('/router')}>
                 <ListItemIcon>
                   <RouterIcon />
                 </ListItemIcon>
                 <ListItemText primary="Router" />
               </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
+              <ListItemButton sx={{ pl: 4 }} onClick={() => navigate('/firewall')}>
                 <ListItemIcon>
                   <ShieldIcon />
                 </ListItemIcon>
@@ -396,13 +395,13 @@ export default function MiniDrawer() {
           </ListItem>
           <Collapse in={nestedOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 4 }}>
+              <ListItemButton sx={{ pl: 4 }} onClick={() => navigate('/vm')}>
                 <ListItemIcon>
                   <ComputerIcon />
                 </ListItemIcon>
                 <ListItemText primary="VM" />
               </ListItemButton>
-              <ListItemButton sx={{ pl: 4 }}>
+              <ListItemButton sx={{ pl: 4 }} onClick={() => navigate('/cluster')}>
                 <ListItemIcon>
                   <GroupIcon />
                 </ListItemIcon>
@@ -459,13 +458,13 @@ export default function MiniDrawer() {
           )}
           <Collapse in={ipamOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 3.2 }}>
+              <ListItemButton sx={{ pl: 3.2 }} onClick={() => navigate('/ip')}>
                 <ListItemIcon>
                   <NetworkCheckIcon />
                 </ListItemIcon>
                 <ListItemText primary="Adresse IP" />
               </ListItemButton>
-              <ListItemButton sx={{ pl: 3.2 }}>
+              <ListItemButton sx={{ pl: 3.2 }} onClick={() => navigate('/rip')}>
                 <ListItemIcon>
                   <PublicIcon />
                 </ListItemIcon>

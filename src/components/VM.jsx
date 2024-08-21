@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function VM() {
   return (
-    <div>VM</div>
+    <div>WeLCOME TO VM Component</div>
   )
 }

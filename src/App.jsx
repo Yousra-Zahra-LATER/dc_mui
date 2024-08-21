@@ -4,6 +4,8 @@ import Profile from './components/Profile';
 import Dashboard from './components/Dashboard';
 import MiniDrawer from './components/Sidebar';
 import Box from '@mui/material/Box';
+import DC from './components/DC';
+import VM from './components/VM';
 // Importez d'autres composants si nécessaire
 
 function App() {
@@ -14,7 +16,9 @@ function App() {
         <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop:'65px'}}>
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/profile" element={<Profile />} /> {/* Ajouter cette route si vous avez un composant Profile */}
+            <Route path="/profile" element={<Profile />} /> 
+            <Route path="/dc" element={<DC/>} />
+            <Route path="/vm" element={<VM/>} /> 
           </Routes>
         </Box>
       </Box>
